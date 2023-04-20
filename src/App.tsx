@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { chat } from './libs/api'
-import ReactAgentChat, {standardClasses} from './Components/react-agent-chat'
+import ReactAgentChat, {standardClasses} from './component/react-agent-chat'
 import './App.scss'
 
 
