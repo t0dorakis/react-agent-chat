@@ -25,6 +25,7 @@ import ReactAgentChat from 'react-agent-chat'
 ### Props
 
 ```ts
+interface PropTypes {
   submitBtnText?: string
   inputText?: string
   submitHandler?: (event: React.FormEvent<HTMLFormElement>) => void
@@ -38,4 +39,5 @@ import ReactAgentChat from 'react-agent-chat'
   fixedPosition?: Position
   ChatIcon?: React.ReactNode;
   alwaysOpen?: boolean;
+}
 ```
