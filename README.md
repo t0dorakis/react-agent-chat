@@ -11,6 +11,7 @@ A simple vanilla-react frontend chat module to be used with custom chatbot agent
 ```bash
   pnpm install react-agent-chat
 ```
+
 or if you prefer npm:
 
 ```bash
