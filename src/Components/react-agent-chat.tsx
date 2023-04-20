@@ -4,8 +4,6 @@ import styles from './react-agent-chat.module.scss'
 /**
  * React chat module to be used with custom AI chatbots and Agents
  * @author  {Theodor Hillmann}
- * @version {0.0.1}
- * @param   {string} className - custom class name for the wrapper
  * @param   {string} submitBtnText - text for the submit button
  * @param   {string} inputText - text for the input field
  * @param   {string} examplesTitle - title for the examples
@@ -14,7 +12,7 @@ import styles from './react-agent-chat.module.scss'
  * @param   {Example[]} examples - examples for the user to click on
  * @param   {CustomClasses} classes - custom classes for the components
  * @param   {Function} onSubmit - function to be called when the user submits a message
- * @param   {Function} submitHandler - function to be call^ed when the user submits a message
+ * @param   {Function} submitHandler - function to be called when the user submits a message
  * @param   {Function} onExampleClick - function to be called when the user clicks on an example
  * @param   {Function} onChatClose - function to be called when the user closes the chat
  * @param   {Function} onChatOpen - function to be called when the user opens the chat
