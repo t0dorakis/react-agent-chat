@@ -1,38 +1,39 @@
 {
-  "name": "react-agent-chat",
-  "version": "0.0.1",
+  "name": "react-agent-chat-example",
+  "version": "1.0.0",
   "private": false,
-  "description": "React Agent Chat",
-    "babel": {
-    "presets": [
-      "@babel/preset-react"
-    ]
-  },
+  "description": "React Agent Chat Example",
   "author": {
     "name": "Theodor Hillmann",
     "email": "ich@theodorhillmann.de",
     "url": "https://theodorhillmann.de",
     "github": "t0dorakis"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t0dorakis/react-agent-chat.git"
+  },
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.23",
+    "@types/node": "^16.18.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "sass": "^1.62.0",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "react-agent-chat" : "file:../package"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "rm -rf dist && mkdir dist &&  babel src/component -d dist --copy-files"
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "eslintConfig": {
     "extends": [
@@ -54,7 +55,9 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
+    "@babel/plugin-transform-typescript": "^7.21.3",
     "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.4",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "prettier": "^2.8.7",

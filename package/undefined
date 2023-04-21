@@ -1,0 +1,170 @@
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react')) :
+    typeof define === 'function' && define.amd ? define(['exports', 'react'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["react-agent-chat"] = global["react-agent-chat"] || {}, global.React));
+})(this, (function (exports, React) { 'use strict';
+
+    /******************************************************************************
+    Copyright (c) Microsoft Corporation.
+
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+    PERFORMANCE OF THIS SOFTWARE.
+    ***************************************************************************** */
+
+    var __assign = function() {
+        __assign = Object.assign || function __assign(t) {
+            for (var s, i = 1, n = arguments.length; i < n; i++) {
+                s = arguments[i];
+                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+            }
+            return t;
+        };
+        return __assign.apply(this, arguments);
+    };
+
+    function styleInject(css, ref) {
+      if ( ref === void 0 ) ref = {};
+      var insertAt = ref.insertAt;
+
+      if (!css || typeof document === 'undefined') { return; }
+
+      var head = document.head || document.getElementsByTagName('head')[0];
+      var style = document.createElement('style');
+      style.type = 'text/css';
+
+      if (insertAt === 'top') {
+        if (head.firstChild) {
+          head.insertBefore(style, head.firstChild);
+        } else {
+          head.appendChild(style);
+        }
+      } else {
+        head.appendChild(style);
+      }
+
+      if (style.styleSheet) {
+        style.styleSheet.cssText = css;
+      } else {
+        style.appendChild(document.createTextNode(css));
+      }
+    }
+
+    var css_248z = ".styles-module_rca_wrapper__c0nob {\n  display: flex;\n  flex-direction: column;\n  width: 400px;\n  background-color: #f8fafc;\n  color: #0f172a;\n  border-radius: 4px;\n}\n@media screen and (max-width: 450px) {\n  .styles-module_rca_wrapper__c0nob {\n    width: 90%;\n  }\n}\n\n.styles-module_rca_action_bar__7-Qir {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  padding: 16px;\n  background: #f1f5f9;\n  border-bottom-left-radius: 4px;\n  border-bottom-right-radius: 4px;\n}\n\n.styles-module_rca_input__11nD3 {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  padding: 12px 12px;\n  border-radius: 8px;\n  border: 1px solid #cbd5e1;\n  flex-grow: 1;\n}\n.styles-module_rca_input__11nD3:focus-within {\n  border: 1px solid #64748b;\n}\n.styles-module_rca_input__11nD3:focus {\n  outline: none;\n}\n.styles-module_rca_input__11nD3:not(:focus-within) {\n  border: 1px solid #cbd5e1;\n}\n\n.styles-module_rca_submit__Iohz8 {\n  background-color: #334155;\n  color: #f8fafc;\n  border-radius: 8px;\n  padding: 12px 12px;\n  font-weight: bold;\n  cursor: pointer;\n  box-shadow: none;\n  border: none;\n  transition: all 0.2s ease-in-out;\n}\n.styles-module_rca_submit__Iohz8:hover {\n  background-color: #475569;\n}\n.styles-module_rca_submit__Iohz8:active {\n  background-color: #1e293b;\n}\n.styles-module_rca_submit__Iohz8:disabled {\n  background-color: #cbd5e1;\n  cursor: not-allowed;\n}\n.styles-module_rca_submit__Iohz8 :focus {\n  outline: #1e293b;\n}\n\n.styles-module_rca_dialog__XJ6YK {\n  display: flex;\n  flex-direction: column;\n  width: auto;\n  gap: 8px;\n  padding: 16px;\n  max-height: 400px;\n  overflow-y: auto;\n  scroll-behavior: smooth;\n}\n.styles-module_rca_dialog__XJ6YK::-webkit-scrollbar {\n  width: 8px;\n}\n.styles-module_rca_dialog__XJ6YK::-webkit-scrollbar-track {\n  background: #f1f5f9;\n}\n.styles-module_rca_dialog__XJ6YK::-webkit-scrollbar-thumb {\n  background: #cbd5e1;\n  border-radius: 2px;\n}\n.styles-module_rca_dialog__XJ6YK::-webkit-scrollbar-thumb:hover {\n  background: #94a3b8;\n}\n\n/* last question should have an open bubble */\n.styles-module_rca_dialog__XJ6YK > .styles-module_rca_dialog_item__EEgIC:last-child > .styles-module_rca_dialog_item_question__M-4q4 {\n  border-bottom-left-radius: 1px;\n}\n\n.styles-module_rca_dialog__XJ6YK > .styles-module_rca_dialog_item__EEgIC:last-child > .styles-module_rca_dialog_item_answer__vWW2n {\n  border-top-right-radius: 1px;\n}\n\n.styles-module_rca_dialog_item__EEgIC {\n  display: flex;\n  flex-direction: column;\n  font-size: small;\n  width: 100%;\n  gap: 8px;\n}\n\n.styles-module_rca_dialog_item_question__M-4q4,\n.styles-module_rca_dialog_item_answer__vWW2n {\n  padding: 8px 16px;\n  border-radius: 8px;\n  background-color: #f1f5f9;\n  width: fit-content;\n  min-width: 30%;\n  max-width: 70%;\n  display: flex;\n  align-items: center;\n  min-height: 24px;\n  text-align: left;\n}\n\n.styles-module_rca_dialog_item_answer__vWW2n {\n  padding: 8px 16px;\n  border-radius: 8px;\n  background-color: #cbd5e1;\n  margin-left: auto;\n}\n\n/* EXAMPLES */\n.styles-module_rca_examples_wrapper__pbfpF {\n  display: flex;\n  flex-direction: column;\n  gap: 0.2em;\n  font-size: small;\n  margin-bottom: 12px;\n}\n\n.styles-module_rca_examples_title__XJyv2 {\n  font-weight: bold;\n  font-size: larger;\n  margin-bottom: 1rem;\n}\n\n.styles-module_rca_examples__kZOvY {\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  gap: 0.2em;\n  justify-items: center;\n  align-items: center;\n}\n\n.styles-module_rca_example_item__zFI0r {\n  width: max-content;\n  padding: 16px;\n  background: rgba(226, 232, 240, 0.5);\n  border-radius: 2px;\n  cursor: pointer;\n}\n.styles-module_rca_example_item__zFI0r:hover {\n  background: rgba(226, 232, 240, 0.7);\n}\n\n/* LOADING DOTS */\n.styles-module_rca_loading_dots__kPJAp {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  gap: 0.2em;\n  /* laoding dots animation */\n}\n.styles-module_rca_loading_dots__kPJAp div:nth-child(1) {\n  animation: styles-module_rca_loading_dot__8xuYH 1s infinite ease-in-out;\n}\n.styles-module_rca_loading_dots__kPJAp > .styles-module_rca_loading_dot__8xuYH:nth-child(2) {\n  animation: styles-module_rca_loading_dot__8xuYH 1s infinite 0.2s ease-in-out;\n}\n.styles-module_rca_loading_dots__kPJAp > .styles-module_rca_loading_dot__8xuYH:nth-child(3) {\n  animation: styles-module_rca_loading_dot__8xuYH 1s infinite 0.4s ease-in-out;\n}\n\n/* keyframe animation for loading dots */\n@keyframes styles-module_rca_loading_dot__8xuYH {\n  0% {\n    opacity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n.styles-module_rca_loading_dot__8xuYH {\n  width: 4px;\n  height: 4px;\n  border-radius: 50%;\n  background-color: #334155;\n}\n\n.styles-module_rca_closed_chat_wrapper__etcU7 {\n  width: fit-content;\n  height: fit-content;\n  min-height: 32px;\n  min-width: 32px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  height: auto;\n  position: relative;\n  cursor: pointer;\n}\n.styles-module_rca_closed_chat_wrapper__etcU7:hover .styles-module_rca_closed_chat__UeyRV {\n  background-color: #64748b;\n  transform: scale(1.1);\n}\n\n.styles-module_rca_closed_chat__UeyRV {\n  display: flex;\n  min-height: inherit;\n  min-width: inherit;\n  width: inherit;\n  height: inherit;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 4px;\n  background-color: #475569;\n  border-radius: 100%;\n  transition: all 0.2s ease-in-out;\n}\n\n.styles-module_rca_close_button__YgLdB {\n  position: absolute;\n  top: calc(-1 * 32px - 4px);\n  right: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 8px;\n  width: 12px;\n  height: 12px;\n  font-size: 12px;\n  color: #94a3b8;\n  cursor: pointer;\n  background-color: #e2e8f0;\n  border-radius: 100%;\n  border: none;\n  box-shadow: none;\n}\n.styles-module_rca_close_button__YgLdB:hover {\n  background-color: #cbd5e1;\n}";
+    var styles = {"rca_wrapper":"styles-module_rca_wrapper__c0nob","rca_action_bar":"styles-module_rca_action_bar__7-Qir","rca_input":"styles-module_rca_input__11nD3","rca_submit":"styles-module_rca_submit__Iohz8","rca_dialog":"styles-module_rca_dialog__XJ6YK","rca_dialog_item":"styles-module_rca_dialog_item__EEgIC","rca_dialog_item_question":"styles-module_rca_dialog_item_question__M-4q4","rca_dialog_item_answer":"styles-module_rca_dialog_item_answer__vWW2n","rca_examples_wrapper":"styles-module_rca_examples_wrapper__pbfpF","rca_examples_title":"styles-module_rca_examples_title__XJyv2","rca_examples":"styles-module_rca_examples__kZOvY","rca_example_item":"styles-module_rca_example_item__zFI0r","rca_loading_dots":"styles-module_rca_loading_dots__kPJAp","rca_loading_dot":"styles-module_rca_loading_dot__8xuYH","rca_closed_chat_wrapper":"styles-module_rca_closed_chat_wrapper__etcU7","rca_closed_chat":"styles-module_rca_closed_chat__UeyRV","rca_close_button":"styles-module_rca_close_button__YgLdB"};
+    styleInject(css_248z);
+
+    var Examples = function (_a) {
+        var examples = _a.examples, examplesTitle = _a.examplesTitle, onClick = _a.onClick, classes = _a.classes;
+        var handleClick = function (item) {
+            onClick && onClick(item);
+        };
+        return (React.createElement("div", { className: classes.examplesWrapper },
+            React.createElement("div", { className: classes.examplesTitle }, examplesTitle),
+            React.createElement("div", { className: classes.examples }, examples.map(function (item, index) { return (React.createElement("div", { key: index, className: classes.exampleItem, onClick: function () { return handleClick(item); }, "aria-label": "Try an example question" },
+                "\u201C",
+                item.text,
+                "\u201D \u2192")); }))));
+    };
+    var LoadingDots = function () {
+        return (React.createElement("div", { className: styles.rca_loading_dots },
+            React.createElement("div", { className: styles.rca_loading_dot }),
+            React.createElement("div", { className: styles.rca_loading_dot }),
+            React.createElement("div", { className: styles.rca_loading_dot })));
+    };
+    var CloseButton = function (_a) {
+        var onClick = _a.onClick;
+        return (React.createElement("div", { className: styles.rca_close_button, onClick: onClick }, "\u2715"));
+    };
+    var standardClasses = {
+        wrapper: styles.rca_wrapper,
+        dialog: styles.rca_dialog,
+        dialogItem: styles.rca_dialog_item,
+        dialogItemQuestion: styles.rca_dialog_item_question,
+        dialogItemAnswer: styles.rca_dialog_item_answer,
+        actionBar: styles.rca_action_bar,
+        input: styles.rca_input,
+        submit: styles.rca_submit,
+        examplesWrapper: styles.rca_examples_wrapper,
+        examplesTitle: styles.rca_examples_title,
+        examples: styles.rca_examples,
+        exampleItem: styles.rca_example_item,
+        closedChat: styles.rca_closed_chat,
+        closedChatWrapper: styles.rca_closed_chat_wrapper,
+        closeBtn: styles.rca_close_button,
+    };
+    var ReactAgentChat = function (_a) {
+        var _b = _a.submitBtnText, submitBtnText = _b === void 0 ? 'Send' : _b, _c = _a.examples, examples = _c === void 0 ? [{ text: 'Who won the Eurovision Song Contest in 2022' }] : _c, _d = _a.examplesTitle, examplesTitle = _d === void 0 ? 'Examples' : _d, inputText = _a.inputText, _e = _a.classes, classes = _e === void 0 ? __assign({}, standardClasses) : _e, _f = _a.onSubmit, onSubmit = _f === void 0 ? function (text) { } : _f, _g = _a.placeholder, placeholder = _g === void 0 ? 'Send a message ...' : _g, receivedMessage = _a.receivedMessage, _h = _a.startsOpen, startsOpen = _h === void 0 ? false : _h, _j = _a.alwaysOpen, alwaysOpen = _j === void 0 ? true : _j, ChatIcon = _a.ChatIcon, fixedPosition = _a.fixedPosition;
+        var _k = React.useState([]), dialog = _k[0], setDialog = _k[1];
+        var _l = React.useState(startsOpen), isOpen = _l[0], setOpen = _l[1];
+        var _m = React.useState(''), currentText = _m[0], setCurrentText = _m[1];
+        var dialogRef = React.useRef(null);
+        // whenever the received message changes, add it to the first related question in the dialog. TODO: make this more robust
+        React.useEffect(function () {
+            if (receivedMessage) {
+                var firstQuestionLoading = dialog.findIndex(function (item) { return item.answer === 'LOADING'; });
+                if (firstQuestionLoading !== -1) {
+                    var newDialog = dialog.slice();
+                    newDialog[firstQuestionLoading].answer = receivedMessage;
+                    setDialog(newDialog);
+                }
+                dialogRef.current &&
+                    dialogRef.current.scrollTo(0, dialogRef.current.scrollHeight);
+            }
+        }, [receivedMessage]);
+        var handleFocus = function (event) {
+            return event.target.select();
+        };
+        var handleSubmit = function (event) {
+            event.preventDefault();
+            var inputText = event.currentTarget.elements.promptInput.value;
+            setDialog(dialog.concat([{ question: inputText, answer: 'LOADING' }]));
+            onSubmit && onSubmit(inputText);
+            // scroll down to the last chat message
+            dialogRef.current &&
+                dialogRef.current.scrollTo(0, dialogRef.current.scrollHeight);
+            event.currentTarget.reset();
+        };
+        var handleExampleClick = function (example) {
+            setDialog(dialog.concat([{ question: example.text, answer: 'LOADING' }]));
+            onSubmit && onSubmit(example.text);
+        };
+        return isOpen || alwaysOpen ? (React.createElement("div", { className: classes.wrapper, style: fixedPosition
+                ? {
+                    position: fixedPosition ? 'fixed' : 'unset',
+                    bottom: '24px',
+                    right: '24px',
+                }
+                : {} },
+            !alwaysOpen && React.createElement(CloseButton, { onClick: function () { return setOpen(false); } }),
+            React.createElement("div", { ref: dialogRef, className: classes.dialog },
+                dialog.length === 0 && examples.length > 0 && (React.createElement(Examples, { examples: examples, examplesTitle: examplesTitle, onClick: handleExampleClick, classes: classes })),
+                dialog.map(function (item, index) { return (React.createElement("div", { key: index, className: classes.dialogItem },
+                    React.createElement("div", { className: classes.dialogItemQuestion }, item.question),
+                    React.createElement("div", { className: classes.dialogItemAnswer }, item.answer === 'LOADING' ? React.createElement(LoadingDots, null) : item.answer))); })),
+            React.createElement("form", { onSubmit: handleSubmit },
+                React.createElement("div", { className: classes.actionBar },
+                    React.createElement("input", { placeholder: placeholder, type: "text", id: "promptInput", className: classes.input, value: inputText, "aria-label": "Chat input", onChange: function (e) { return setCurrentText(e.target.value); }, onFocus: handleFocus }),
+                    React.createElement("button", { type: "submit", "aria-label": "Send message", disabled: currentText === '', className: classes.submit }, submitBtnText))))) : (React.createElement("div", { className: classes.closedChatWrapper, style: fixedPosition
+                ? {
+                    position: fixedPosition ? 'fixed' : 'unset',
+                    bottom: '24px',
+                    right: '24px',
+                }
+                : {} },
+            React.createElement("a", { className: classes.closedChat, onClick: function () { return setOpen(true); } }, ChatIcon ? ChatIcon : '')));
+    };
+
+    exports.default = ReactAgentChat;
+    exports.standardClasses = standardClasses;
+
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+}));

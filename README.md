@@ -31,10 +31,31 @@ interface PropTypes {
   submitBtnText?: string
   inputText?: string
   submitHandler?: (event: React.FormEvent<HTMLFormElement>) => void
-  examples?: Example[]
+  examples?: Example[] {
+    text: string
+  } 
   examplesTitle?: string
   placeholder?: string
-  classes?: CustomClasses
+  // overrides classnames 
+  classes?: CustomClasses {
+    wrapper?: string
+    dialog?: string
+    dialogItem?: string
+    dialogItemQuestion?: string
+    dialogItemAnswer?: string
+    actionBar?: string
+    input?: string
+    submit?: string
+    examplesWrapper?: string
+    examplesTitle?: string
+    examples?: string
+    exampleItem?: string
+    loadingDots?: string
+    loadingDot?: string
+    closedChat?: string
+    closedChatWrapper?: string
+    closeBtn?: string
+  }
   onSubmit?: (text: string) => void
   receivedMessage?: string
   startsOpen?: boolean

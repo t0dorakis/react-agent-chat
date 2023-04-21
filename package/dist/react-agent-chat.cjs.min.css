@@ -1,0 +1,259 @@
+.styles-module_rca_wrapper__c0nob {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background-color: #f8fafc;
+  color: #0f172a;
+  border-radius: 4px;
+}
+@media screen and (max-width: 450px) {
+  .styles-module_rca_wrapper__c0nob {
+    width: 90%;
+  }
+}
+
+.styles-module_rca_action_bar__7-Qir {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: #f1f5f9;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.styles-module_rca_input__11nD3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  flex-grow: 1;
+}
+.styles-module_rca_input__11nD3:focus-within {
+  border: 1px solid #64748b;
+}
+.styles-module_rca_input__11nD3:focus {
+  outline: none;
+}
+.styles-module_rca_input__11nD3:not(:focus-within) {
+  border: 1px solid #cbd5e1;
+}
+
+.styles-module_rca_submit__Iohz8 {
+  background-color: #334155;
+  color: #f8fafc;
+  border-radius: 8px;
+  padding: 12px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+.styles-module_rca_submit__Iohz8:hover {
+  background-color: #475569;
+}
+.styles-module_rca_submit__Iohz8:active {
+  background-color: #1e293b;
+}
+.styles-module_rca_submit__Iohz8:disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+}
+.styles-module_rca_submit__Iohz8 :focus {
+  outline: #1e293b;
+}
+
+.styles-module_rca_dialog__XJ6YK {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  gap: 8px;
+  padding: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+.styles-module_rca_dialog__XJ6YK::-webkit-scrollbar {
+  width: 8px;
+}
+.styles-module_rca_dialog__XJ6YK::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.styles-module_rca_dialog__XJ6YK::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+.styles-module_rca_dialog__XJ6YK::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* last question should have an open bubble */
+.styles-module_rca_dialog__XJ6YK > .styles-module_rca_dialog_item__EEgIC:last-child > .styles-module_rca_dialog_item_question__M-4q4 {
+  border-bottom-left-radius: 1px;
+}
+
+.styles-module_rca_dialog__XJ6YK > .styles-module_rca_dialog_item__EEgIC:last-child > .styles-module_rca_dialog_item_answer__vWW2n {
+  border-top-right-radius: 1px;
+}
+
+.styles-module_rca_dialog_item__EEgIC {
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+  width: 100%;
+  gap: 8px;
+}
+
+.styles-module_rca_dialog_item_question__M-4q4,
+.styles-module_rca_dialog_item_answer__vWW2n {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #f1f5f9;
+  width: fit-content;
+  min-width: 30%;
+  max-width: 70%;
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  text-align: left;
+}
+
+.styles-module_rca_dialog_item_answer__vWW2n {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #cbd5e1;
+  margin-left: auto;
+}
+
+/* EXAMPLES */
+.styles-module_rca_examples_wrapper__pbfpF {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  font-size: small;
+  margin-bottom: 12px;
+}
+
+.styles-module_rca_examples_title__XJyv2 {
+  font-weight: bold;
+  font-size: larger;
+  margin-bottom: 1rem;
+}
+
+.styles-module_rca_examples__kZOvY {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.2em;
+  justify-items: center;
+  align-items: center;
+}
+
+.styles-module_rca_example_item__zFI0r {
+  width: max-content;
+  padding: 16px;
+  background: rgba(226, 232, 240, 0.5);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.styles-module_rca_example_item__zFI0r:hover {
+  background: rgba(226, 232, 240, 0.7);
+}
+
+/* LOADING DOTS */
+.styles-module_rca_loading_dots__kPJAp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+  /* laoding dots animation */
+}
+.styles-module_rca_loading_dots__kPJAp div:nth-child(1) {
+  animation: styles-module_rca_loading_dot__8xuYH 1s infinite ease-in-out;
+}
+.styles-module_rca_loading_dots__kPJAp > .styles-module_rca_loading_dot__8xuYH:nth-child(2) {
+  animation: styles-module_rca_loading_dot__8xuYH 1s infinite 0.2s ease-in-out;
+}
+.styles-module_rca_loading_dots__kPJAp > .styles-module_rca_loading_dot__8xuYH:nth-child(3) {
+  animation: styles-module_rca_loading_dot__8xuYH 1s infinite 0.4s ease-in-out;
+}
+
+/* keyframe animation for loading dots */
+@keyframes styles-module_rca_loading_dot__8xuYH {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.styles-module_rca_loading_dot__8xuYH {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #334155;
+}
+
+.styles-module_rca_closed_chat_wrapper__etcU7 {
+  width: fit-content;
+  height: fit-content;
+  min-height: 32px;
+  min-width: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+}
+.styles-module_rca_closed_chat_wrapper__etcU7:hover .styles-module_rca_closed_chat__UeyRV {
+  background-color: #64748b;
+  transform: scale(1.1);
+}
+
+.styles-module_rca_closed_chat__UeyRV {
+  display: flex;
+  min-height: inherit;
+  min-width: inherit;
+  width: inherit;
+  height: inherit;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  background-color: #475569;
+  border-radius: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.styles-module_rca_close_button__YgLdB {
+  position: absolute;
+  top: calc(-1 * 32px - 4px);
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  width: 12px;
+  height: 12px;
+  font-size: 12px;
+  color: #94a3b8;
+  cursor: pointer;
+  background-color: #e2e8f0;
+  border-radius: 100%;
+  border: none;
+  box-shadow: none;
+}
+.styles-module_rca_close_button__YgLdB:hover {
+  background-color: #cbd5e1;
+}
