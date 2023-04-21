@@ -26,7 +26,7 @@ import ReactAgentChat from 'react-agent-chat'
 
 ### Usage
 
-```react
+```js
 
 import React, { useState } from 'react'
 import { chat } from './libs/api'
