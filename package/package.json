@@ -1,6 +1,6 @@
 {
   "name": "react-agent-chat",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Chat component for AI Agents",
   "module": "dist/react-agent-chat.module.min.js",
   "browser": "dist/react-agent-chat.min.js",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c --bundleConfigAsCjs",
     "watch": "rollup -c --bundleConfigAsCjs -w",
-    "publish": "npm version patch && npm publish"
+    "publish": "npm publish"
      },
   "repository": {
     "type": "git",
