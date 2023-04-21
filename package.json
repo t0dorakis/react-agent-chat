@@ -1,0 +1,37 @@
+{
+  "name": "react-agent-chat",
+  "version": "0.0.4",
+  "description": "React chat component for AI agents",
+  "module": "dist/react-agent-chat.module.min.js",
+  "browser": "dist/react-agent-chat.min.js",
+  "main": "dist/react-agent-chat.cjs.min.js",
+  "scripts": {
+    "package:build": "cd package && npm version patch && npm run build && cd ..",
+    "package:publish": "npm publish package",
+    "package:copyReadme": "cp README.md package",
+    "package:copyLicense": "cp LICENSE package",
+    "bumpVersion": "cd package && npm version patch && cd .."
+     },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t0dorakis/react-agent-chat.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "chat",
+    "LLM",
+    "chatbot",
+    "react-component"
+  ],
+  "author": {
+    "name": "Theodor Hillmann",
+    "email": "ich@theodorhillmann.de",
+    "url": "https://www.theodorhillmann.de"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/t0dorakis/react-agent-chat/issues"
+  },
+  "homepage": "https://github.com/t0dorakis/react-agent-chat#readme"
+}

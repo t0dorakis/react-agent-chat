@@ -20,8 +20,8 @@ dependencies:
     specifier: ^18.2.0
     version: 18.2.0
   react-agent-chat:
-    specifier: file:../package
-    version: file:../package(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^0.0.4
+    version: 0.0.4(react-dom@18.2.0)(react@18.2.0)
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
@@ -8245,6 +8245,16 @@ packages:
       unpipe: 1.0.0
     dev: false
 
+  /react-agent-chat@0.0.4(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-yI5PSm22Zu6IY7/6HNZ5txOGRk/OxNZ37lNYrdTXBH5D22Qd8MbKyZuvvRIYY+nBRXReFQIcVaq7pSNGj6AyNw==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /react-app-polyfill@3.0.0:
     resolution: {integrity: sha512-sZ41cxiU5llIB003yxxQBYrARBqe0repqPTTYBTmMqTz9szeBbE37BehCE891NZsmdZqqP+xWKdT3eo3vOzN8w==}
     engines: {node: '>=14'}
@@ -10283,17 +10293,4 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-    dev: false
-
-  file:../package(react-dom@18.2.0)(react@18.2.0):
-    resolution: {directory: ../package, type: directory}
-    id: file:../package
-    name: react-agent-chat
-    version: 0.0.3
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false

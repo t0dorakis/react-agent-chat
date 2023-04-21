@@ -24,6 +24,60 @@ or if you prefer npm:
 import ReactAgentChat from 'react-agent-chat'
 ```
 
+### Usage
+
+```react
+
+import React, { useState } from 'react'
+import { chat } from './libs/api'
+import ReactAgentChat, {standardClasses} from 'react-agent-chat'
+import 'react-agent-chat/dist/react-agent-chat.min.css'
+import './App.scss'
+
+const ChatIcon = () => {
+  return {
+    // image or SVG used as an Icon for the closed/minimised chat  
+  }
+}
+
+function App() {
+  
+  const [receivedMessage, setReceivedMessage] = useState('')
+  // trigger your own api call on chat input
+  const handleSubmit = async (text: string) => {
+    const chatResponse = await chat(text)
+    setReceivedMessage(chatResponse)
+  }
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <ReactAgentChat
+          classes={{
+            ...standardClasses,
+            // overide classNames (list of classnames can be seen in README props)
+            // wrapper: "chat-box",
+          }}
+          // trigger your own api call on chat input
+          onSubmit={(text) => {
+            handleSubmit(text)
+          }}
+          // return messages from your api are returned to the chat via receivedMessage 
+          receivedMessage={receivedMessage}
+          startsOpen={false}
+          alwaysOpen={false}
+          fixedPosition="bottom-right"
+          ChatIcon={<ChatIcon></ChatIcon>}
+        ></ReactAgentChat>
+      </header>
+    </div>
+  )
+}
+
+export default App
+
+```
+
 ### Props
 
 ```ts
