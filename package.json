@@ -1,6 +1,6 @@
 {
   "name": "react-agent-chat",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React chat component for AI agents",
   "module": "dist/react-agent-chat.module.min.js",
   "browser": "dist/react-agent-chat.min.js",
@@ -11,7 +11,7 @@
     "package:copyReadme": "cp README.md package",
     "package:copyLicense": "cp LICENSE package",
     "bumpVersion": "cd package && npm version patch && cd .."
-     },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/t0dorakis/react-agent-chat.git"
