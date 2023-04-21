@@ -6,6 +6,8 @@ tags `react`, `typescript`, `chatbot`, `chat`
 
 A simple vanilla-react frontend chat module to be used with custom chatbot agents.
 
+[Try it on Codesandbox](https://codesandbox.io/s/react-agent-chat-example-nywk9r?file=/src/App.js)
+
 ## Installation
 
 ```bash
