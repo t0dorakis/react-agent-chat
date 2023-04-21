@@ -8,8 +8,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c --bundleConfigAsCjs",
-    "watch": "rollup -c --bundleConfigAsCjs -w"
-  },
+    "watch": "rollup -c --bundleConfigAsCjs -w",
+    "publish": "npm version patch && npm publish"
+     },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/t0dorakis/react-agent-chat.git"
